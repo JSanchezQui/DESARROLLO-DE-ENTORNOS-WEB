@@ -1,0 +1,476 @@
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN BASE (:root)
+   ========================================================================== */
+:root {
+    --primary-color: #0284c7;
+    --primary-hover: #0369a1;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --bg-light: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --error-color: #b91c1c;
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --focus-ring: #0284c7;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+.container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Enlace accesible para saltar al contenido principal */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: var(--text-dark);
+    color: #ffffff;
+    padding: 8px 16px;
+    z-index: 1000;
+    transition: top 0.2s ease;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Foco visible universal */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   HEADER Y NAVEGACIÓN FLEXBOX (Mobile First)
+   ========================================================================== */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.hamburger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-dark);
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-dark);
+    left: 0;
+}
+
+.hamburger::before { top: -6px; }
+.hamburger::after { top: 6px; }
+
+.nav-menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-menu.is-active {
+    display: block;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 1rem;
+}
+
+.nav-menu li {
+    margin-bottom: 0.75rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    display: block;
+}
+
+/* Pseudo-clase con propósito */
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   SECCIONES Y BOTONES
+   ========================================================================== */
+.hero-section {
+    background-color: #e0f2fe;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.hero-section p {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary,
+.btn-submit {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Selector de Atributo con propósito */
+button[type="submit"] {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   TARJETAS DE SERVICIO (CSS GRID)
+   ========================================================================== */
+.services-section,
+.faq-section,
+.contact-section,
+.form-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+/* Combinador Hijo Directo */
+.services-grid > .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   FAQS Y CONTACTO
+   ========================================================================== */
+.faq-category {
+    margin-bottom: 1.5rem;
+}
+
+.faq-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+details {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+details p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.contact-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   FORMULARIO Y ACCESIBILIDAD
+   ========================================================================== */
+.simulation-banner {
+    background-color: #fef3c7;
+    border-left: 4px solid #d97706;
+    color: #92400e;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.fieldset-group {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.required {
+    color: var(--error-color);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.radio-options {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.radio-label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.help-text {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.feedback-container {
+    margin-top: 1rem;
+}
+
+.feedback-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid #a7f3d0;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.feedback-error {
+    background-color: #fee2e2;
+    color: var(--error-color);
+    border: 1px solid #fca5a5;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.footer {
+    background-color: var(--text-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (DESIGN RESPONSIVE)
+   ========================================================================== */
+
+/* Tablet: >= 768px */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: block !important;
+        position: static;
+        width: auto;
+        background: none;
+        border: none;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        gap: 1.25rem;
+        padding: 0;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        margin-bottom: 0;
+    }
+
+    .nav-btn {
+        background-color: var(--primary-color);
+        color: #ffffff !important;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+    }
+
+    .nav-btn:hover {
+        background-color: var(--primary-hover);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    button[type="submit"] {
+        width: auto;
+    }
+}
+
+/* Escritorio: >= 1440px */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .hero-section {
+        padding: 5rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

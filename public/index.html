@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Servicios - Portal de Soporte Técnico y Servicios TI</title>
+    <meta name="description" content="Portal corporativo de Nova Servicios para consulta de servicios de TI, preguntas frecuentes y gestión simulada de solicitudes de soporte técnico.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="header">
+        <div class="header-container">
+            <span class="logo">Nova Servicios</span>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+                <span class="hamburger"></span>
+            </button>
+            <nav id="main-nav" class="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#soporte" class="nav-btn">Solicitar soporte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Inicio -->
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <h1>Nova Servicios - Soluciones Integrales de TI</h1>
+                <p>Mantenimiento de infraestructura, gestión de redes y asistencia técnica orientada a la continuidad operativa empresarial.</p>
+                <a href="#soporte" class="btn btn-primary">Solicitar soporte</a>
+            </div>
+        </section>
+
+        <!-- 4 Tarjetas de Servicio -->
+        <section id="servicios" class="services-section container">
+            <h2>Servicios Especializados de TI</h2>
+            <div class="services-grid">
+                <article class="card">
+                    <h3>Soporte e Infraestructura</h3>
+                    <p>Atención a incidencias en estaciones de trabajo, impresoras corporativas y diagnósticos de hardware.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte técnico</a>
+                </article>
+
+                <article class="card">
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Optimización periódica de sistemas, depuración de software y monitoreo continuo de equipos.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte técnico</a>
+                </article>
+
+                <article class="card">
+                    <h3>Redes y Conectividad</h3>
+                    <p>Configuración de switches, routers, VLANs corporativas y resolución de fallas en enlace local o VPN.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte técnico</a>
+                </article>
+
+                <article class="card">
+                    <h3>Seguridad y Gestión Cloud</h3>
+                    <p>Administración de directivas de grupo, copias de respaldo y resguardo de datos en entornos en la nube.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte técnico</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5 FAQs organizadas en 2 Categorías -->
+        <section id="faq" class="faq-section container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <article class="faq-category">
+                <h3>Categoría 1: Gestión de Tickets y Tiempos de Respuesta</h3>
+                <details>
+                    <summary>¿Cuál es el tiempo promedio de atención de una solicitud?</summary>
+                    <p>Las incidencias clasificadas como Alta prioridad se atienden en un máximo de 2 horas. Las prioridades Media y Baja en un plazo de 24 a 48 horas laborables.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo confirmo que mi ticket fue recibido?</summary>
+                    <p>Al completar el formulario recibirá en pantalla un código de confirmación simulado para el seguimiento interno de su solicitud.</p>
+                </details>
+            </article>
+
+            <article class="faq-category">
+                <h3>Categoría 2: Acceso a Servicios y Redes</h3>
+                <details>
+                    <summary>¿Qué procedimiento debo seguir ante un bloqueo de cuenta?</summary>
+                    <p>Seleccione "Software / Licencias" en el formulario, establezca prioridad Alta e indique su usuario corporativo afectado.</p>
+                </details>
+                <details>
+                    <summary>¿Se brinda asistencia técnica para personal en teletrabajo?</summary>
+                    <p>Sí, la asistencia remota se realiza previa autenticación a través de la red VPN de Nova Servicios.</p>
+                </details>
+                <details>
+                    <summary>¿Qué información ayuda a acelerar la solución del problema?</summary>
+                    <p>Incluya captura de pantalla o texto exacto del mensaje de error, así como la hora estimada de la primera falla.</p>
+                </details>
+            </article>
+        </section>
+
+        <!-- Contacto con horario ficticio -->
+        <section id="contacto" class="contact-section container">
+            <h2>Contacto y Horarios</h2>
+            <div class="contact-card">
+                <p><strong>Mesa de Ayuda - Nova Servicios S.A.C.</strong></p>
+                <p><strong>Horario Ficticio de Atención:</strong> Lunes a Viernes de 08:00 a 18:00 hrs | Sábados de 09:00 a 13:00 hrs.</p>
+                <p><strong>Correo electrónico:</strong> mesadeayuda@novaservicios.test</p>
+                <p><strong>Central Telefónica:</strong> +51 (1) 619-0100 Anexo 402</p>
+            </div>
+        </section>
+
+        <!-- Formulario de Solicitud de Soporte -->
+        <section id="soporte" class="form-section container">
+            <h2>Formulario de Solicitud de Soporte</h2>
+
+            <div class="simulation-banner" role="status">
+                <strong>Aviso de Simulación:</strong> Este formulario es un entorno de prueba técnica. No envía ni almacena datos en servidores ni bases de datos.
+            </div>
+
+            <form id="support-form" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required minlength="3" aria-describedby="nombre-help">
+                    <small id="nombre-help" class="help-text">Ingrese nombres y apellidos (mínimo 3 caracteres).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo electrónico corporativo <span class="required">*</span></label>
+                    <input type="email" id="correo" name="correo" required aria-describedby="correo-help">
+                    <small id="correo-help" class="help-text">Ejemplo de formato: usuario@novaservicios.test</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de incidencia <span class="required">*</span></label>
+                    <select id="tipo" name="tipo" required aria-describedby="tipo-help">
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="hardware">Hardware / Equipos</option>
+                        <option value="software">Software / Licencias</option>
+                        <option value="red">Red / Conectividad</option>
+                        <option value="otro">Otro / Consulta General</option>
+                    </select>
+                    <small id="tipo-help" class="help-text">Seleccione la categoría principal del problema.</small>
+                </div>
+
+                <fieldset class="form-group fieldset-group">
+                    <legend>Prioridad de la incidencia <span class="required">*</span></legend>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                            <input type="radio" name="prioridad" value="Baja" required> Baja
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="prioridad" value="Media" required> Media
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="prioridad" value="Alta" required> Alta
+                        </label>
+                    </div>
+                    <small class="help-text">Indique el impacto en sus labores diarias.</small>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción detallada <span class="required">*</span></label>
+                    <textarea id="descripcion" name="descripcion" minlength="10" maxlength="500" required aria-describedby="desc-help"></textarea>
+                    <small id="desc-help" class="help-text">Explicación del problema (de 10 a 500 caracteres).</small>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Enviar Solicitud</button>
+                <div id="form-feedback" class="feedback-container" aria-live="polite"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nova Servicios S.A.C. Todos los derechos reservados. Evaluación Aplicativa 1.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/ui.js"></script>
+</body>
+</html>
