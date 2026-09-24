@@ -1,7 +1,7 @@
 # Portal TI - Nova Servicios (EA1)
 
 ## Datos del Estudiante
-* **Nombre y Apellidos:** [Tus Apellidos y Nombres]
+* **Nombre y Apellidos:** [Sanchez Quispe Juan Carlos]
 * **Curso:** Desarrollo de Entornos Web · CPEX
 * **Fecha:** 23 de septiembre de 2026
 * **Caso:** Nova Servicios S.A.C.
