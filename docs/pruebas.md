@@ -1,16 +1,17 @@
-# Registro de Pruebas Prácticas - Nova Servicios (EA1)
+# Matriz de Pruebas Realizadas - Guía 5 (EA2)
 
-* **Fecha de ejecución:** 23 de septiembre de 2026
-* **Navegador y Versión:** Google Chrome v128.0 (64-bit)
-* **Entorno:** Live Server (Local) y Vercel Preview
+* **Fecha:** 14 de octubre de 2026
+* **Navegador:** Google Chrome (v128.0)
+* **Entorno:** Live Server (`http://localhost:5500`)
+* **Commit Tested:** `[Agrega aquí el SHA de tu commit]`
 
-| ID | Prueba | Resultado Esperado | Estado | Ruta de Evidencia |
+| ID | Acción | Resultado Esperado | Resultado Real | Estado |
 |---|---|---|---|---|
-| **P01** | Navegación y semántica | Todos los enlaces dirigen a su sección; el formulario se alcanza a 1 clic desde el inicio; estructura semántica correcta con `<h1>` único. | **Cumple** | `docs/capturas/P01_navegacion.png` |
-| **P02** | Móvil de 320 px | La página y el formulario se navegan sin superposición, recortes ni scroll horizontal a 320 px de ancho. | **Cumple** | `docs/capturas/P02_movil_320px.png` |
-| **P03** | Tablet de 768 px | Ajuste de la rejilla de tarjetas a 2 columnas y menú horizontal visible. | **Cumple** | `docs/capturas/P03_tablet_768px.png` |
-| **P04** | Escritorio de 1440 px | Maquetación legible a 4 columnas en las tarjetas de servicio y ancho contenedor limitado a 1200 px. | **Cumple** | `docs/capturas/P04_escritorio_1440px.png` |
-| **P05** | Teclado y zoom | Foco claramente visible al navegar con `Tab`; menú operable con `Enter`/`Space` y `Escape`; contenido utilizable al 200% de zoom. | **Cumple** | Verificado en demostración en vivo |
-| **P06** | Formulario inválido | Validación adecuada al enviar campos vacíos, nombre de <3 caracteres, email sin formato o descripción <10 caracteres. | **Cumple** | `docs/capturas/P06_formulario_invalido.png` |
-| **P07** | Formulario válido | Muestra la confirmación simulada al ingresar: Ana Pérez, ana@example.test, Hardware, Media y descripción de más de 10 caracteres. | **Cumple** | `docs/capturas/P07_formulario_valido.png` |
-| **P08** | Calidad y Preview | Metadatos completos (`lang="es"`, viewport, description), buen contraste WCAG y ejecución de Lighthouse móvil. | **Cumple** | `docs/capturas/P08_lighthouse.png` |
+| **D1** | Cargar portal HTTP | 4 servicios en catálogo y select | Carga correcta los servicios desde JSON | **Cumple** |
+| **D2** | Agregar 5.° servicio en JSON | Tarjeta y opción nuevas sin editar HTML | Se visualiza el 5.° servicio automáticamente | **Cumple** |
+| **D3** | Renombrar JSON | Error comprensible y carga bloqueada | Muestra "No pudimos cargar los servicios" | **Cumple** |
+| **D5** | Cadena HTML en JSON | Texto literal sin ejecución script | Se renderiza en pantalla como texto plano | **Cumple** |
+| **F1** | Enviar vacío | Foco en primer error | Enfoca el selector `#servicio` con mensaje | **Cumple** |
+| **F5** | Enviar válido duplicado | Una sola fila agregada, botón bloqueado | Procesa un único ticket `SOL-0001` | **Cumple** |
+| **A1** | Abrir ayuda con teclado | `Enter`/`Space` abre, `Esc` cierra | El foco regresa al botón correctamente | **Cumple** |
+| **R1** | Probar 320px | Sin scroll horizontal global | Contenido legible en vista móvil | **Cumple** |
