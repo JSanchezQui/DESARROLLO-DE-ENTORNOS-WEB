@@ -1,130 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nova Servicios TI - Portal de Soporte</title>
-    <meta name="description" content="Portal de soporte técnico y catálogo dinámico de servicios de Nova Servicios TI.">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-
+    <meta
+      name="description"
+      content="Portal de soporte técnico y catálogo dinámico de servicios de Nova Servicios TI."
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- Encabezado / Navegación -->
     <header class="header">
-        <div class="header-container">
-            <span class="logo">Nova Servicios TI</span>
-            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
-                <span class="hamburger"></span>
-            </button>
-            <nav id="main-nav" class="nav-menu">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#soporte">Solicitud</a></li>
-                    <li><a href="#solicitudes-memoria">Solicitudes</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="header-container">
+        <span class="logo">Nova Servicios TI</span>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="hamburger"></span>
+        </button>
+        <nav id="main-nav" class="nav-menu">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#soporte">Solicitud</a></li>
+            <li><a href="#solicitudes-memoria">Solicitudes</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main id="main-content">
+      <section id="inicio" class="hero-section">
+        <div class="container">
+          <h1>Nova Servicios - Soluciones Integrales de TI</h1>
+          <p>
+            Mantenimiento de infraestructura, gestión de redes y asistencia técnica
+            orientada a la continuidad operativa empresarial.
+          </p>
+          <a href="#soporte" class="btn btn-primary">Solicitar soporte</a>
+        </div>
+      </section>
 
-        <!-- Sección Catálogo Dinámico -->
-        <section id="servicios" class="services-section container">
-            <h2>Catálogo de Servicios</h2>
-            <p id="estado-catalogo" role="status" aria-live="polite"></p>
-            <div id="catalogo" class="services_grid"></div>
-        </section>
+      <!-- Sección Catálogo Dinámico -->
+      <section id="servicios" class="services-section container">
+        <h2>Catálogo de Servicios</h2>
+        <p id="estado-catalogo" role="status" aria-live="polite"></p>
+        <div id="catalogo" class="services_grid"></div>
+      </section>
 
-        <!-- Panel de Ayuda Accesible -->
-        <section class="container help-container">
-            <button id="boton-ayuda" type="button" aria-expanded="false" aria-controls="panel-ayuda">¿Necesitas ayuda?</button>
-            <div id="panel-ayuda" hidden>
-                <p>Elige el servicio del catálogo y describe qué ocurrió con detalles precisos. Usa datos ficticios.</p>
+      <!-- Panel de Ayuda Accesible -->
+      <section class="container help-container">
+        <button
+          id="boton-ayuda"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panel-ayuda"
+        >
+          ¿Necesitas ayuda?
+        </button>
+        <div id="panel-ayuda" hidden>
+          <p>
+            Elige el servicio del catálogo y describe qué ocurrió con detalles precisos.
+            Usa datos ficticios.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sección Formulario -->
+      <section id="soporte" class="form-section container">
+        <h2>Registrar Solicitud de Soporte</h2>
+
+        <form id="form-incidencia" action="#" method="get">
+          <!-- Servicio (Cargado dinámicamente desde JSON) -->
+          <div class="form-group">
+            <label for="servicio"
+              >Servicio requerido <span class="required">*</span></label
+            >
+            <select
+              id="servicio"
+              name="servicio"
+              required
+              aria-describedby="error-servicio"
+            >
+              <option value="">Cargando servicios...</option>
+            </select>
+            <small id="error-servicio" class="error-msg" role="alert"></small>
+          </div>
+
+          <!-- Correo -->
+          <div class="form-group">
+            <label for="correo"
+              >Correo electrónico corporativo <span class="required">*</span></label
+            >
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              required
+              autocomplete="email"
+              aria-describedby="error-correo"
+            />
+            <small id="error-correo" class="error-msg" role="alert"></small>
+          </div>
+
+          <!-- Prioridad -->
+          <fieldset class="form-group fieldset-group">
+            <legend>Prioridad de la incidencia <span class="required">*</span></legend>
+            <div class="radio-options">
+              <label class="radio-label">
+                <input type="radio" name="prioridad" value="alta" required /> Alta
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="prioridad" value="media" required /> Media
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="prioridad" value="baja" required /> Baja
+              </label>
             </div>
-        </section>
+            <small id="error-prioridad" class="error-msg" role="alert"></small>
+          </fieldset>
 
-        <!-- Sección Formulario -->
-        <section id="soporte" class="form-section container">
-            <h2>Registrar Solicitud de Soporte</h2>
+          <!-- Descripción -->
+          <div class="form-group">
+            <label for="descripcion"
+              >Descripción detallada <span class="required">*</span></label
+            >
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              required
+              minlength="10"
+              maxlength="500"
+              aria-describedby="contador error-descripcion"
+            ></textarea>
+            <span id="contador" class="contador-text">0/500 caracteres</span>
+            <small id="error-descripcion" class="error-msg" role="alert"></small>
+          </div>
 
-            <form id="form-incidencia" action="#" method="get">
-                
-                <!-- Servicio (Cargado dinámicamente desde JSON) -->
-                <div class="form-group">
-                    <label for="servicio">Servicio requerido <span class="required">*</span></label>
-                    <select id="servicio" name="servicio" required aria-describedby="error-servicio">
-                        <option value="">Cargando servicios...</option>
-                    </select>
-                    <small id="error-servicio" class="error-msg" role="alert"></small>
-                </div>
+          <!-- Botón de Envío y Alertas de Estado -->
+          <button id="enviar" type="submit" class="btn btn-primary">
+            Enviar Solicitud
+          </button>
+          <p id="estado" role="status" aria-live="polite" class="estado-container"></p>
+        </form>
+      </section>
 
-                <!-- Correo -->
-                <div class="form-group">
-                    <label for="correo">Correo electrónico corporativo <span class="required">*</span></label>
-                    <input type="email" id="correo" name="correo" required autocomplete="email" aria-describedby="error-correo">
-                    <small id="error-correo" class="error-msg" role="alert"></small>
-                </div>
-
-                <!-- Prioridad -->
-                <fieldset class="form-group fieldset-group">
-                    <legend>Prioridad de la incidencia <span class="required">*</span></legend>
-                    <div class="radio-options">
-                        <label class="radio-label">
-                            <input type="radio" name="prioridad" value="alta" required> Alta
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="prioridad" value="media" required> Media
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="prioridad" value="baja" required> Baja
-                        </label>
-                    </div>
-                    <small id="error-prioridad" class="error-msg" role="alert"></small>
-                </fieldset>
-
-                <!-- Descripción -->
-                <div class="form-group">
-                    <label for="descripcion">Descripción detallada <span class="required">*</span></label>
-                    <textarea id="descripcion" name="descripcion" required minlength="10" maxlength="500" aria-describedby="contador error-descripcion"></textarea>
-                    <span id="contador" class="contador-text">0/500 caracteres</span>
-                    <small id="error-descripcion" class="error-msg" role="alert"></small>
-                </div>
-
-                <!-- Botón de Envío y Alertas de Estado -->
-                <button id="enviar" type="submit" class="btn btn-primary">Enviar Solicitud</button>
-                <p id="estado" role="status" aria-live="polite" class="estado-container"></p>
-            </form>
-        </section>
-
-        <!-- Reto Individual: Tabla de Solicitudes en Memoria -->
-        <section id="solicitudes-memoria" class="status-section container">
-            <h2>Solicitudes de práctica</h2>
-            <div class="table-wrapper">
-                <table class="status-table">
-                    <caption>Registro temporal en memoria (se elimina al recargar la página)</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Código</th>
-                            <th scope="col">Servicio</th>
-                            <th scope="col">Prioridad</th>
-                            <th scope="col">Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody id="filas-solicitudes">
-                        <!-- Las filas se insertan dinámicamente con JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
+      <!-- Reto Individual: Tabla de Solicitudes en Memoria -->
+      <section id="solicitudes-memoria" class="status-section container">
+        <h2>Solicitudes de práctica</h2>
+        <div class="table-wrapper">
+          <table class="status-table">
+            <caption>
+              Registro temporal en memoria (se elimina al recargar la página)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Servicio</th>
+                <th scope="col">Prioridad</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="filas-solicitudes">
+              <!-- Las filas se insertan dinámicamente con JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
 
     <!-- Carga de Scripts -->
     <script src="assets/js/ui.js"></script>
     <script type="module" src="assets/js/catalogo.js"></script>
-    <script src="assets/js/interaccion.js" defer></script>
-</body>
+    <script type="module" src="assets/js/interaccion.js"></script>
+  </body>
 </html>
